@@ -27,13 +27,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($todos as $todo)
+                                {{-- @foreach ($todos as $todo)
                                     <tr>
                                         <td>{{ $todo->name }}</td>
                                         <td>{{ $todo->status }}</td>
                                         <td><button class="btn btn-primary">Done</button></td>
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
+                                @forelse ($todos as $todo)
+                                    <tr>
+                                        <td>{{ $todo->name }}</td>
+                                        <td>{{ $todo->status }}</td>
+                                        <td><button class="btn btn-primary">Done</button></td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3">No Data Yet</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
 
