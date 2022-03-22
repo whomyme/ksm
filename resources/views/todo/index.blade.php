@@ -21,6 +21,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Item</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -34,8 +35,9 @@
                                         <td><button class="btn btn-primary">Done</button></td>
                                     </tr>
                                 @endforeach --}}
-                                @forelse ($todos as $todo)
+                                @forelse ($todos as $key => $todo)
                                     <tr>
+                                        <td>{{ $todos->firstItem() + $key }}</td>
                                         <td>{{ $todo->name }}</td>
                                         <td>{{ $todo->status }}</td>
                                         <td><button class="btn btn-primary">Done</button></td>
