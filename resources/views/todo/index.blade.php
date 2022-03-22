@@ -15,6 +15,7 @@
         <div class="row">
             <div class="col">
                 <h1>{{ $name }}'s Todos</h1>
+                <a href="todos/create" class="btn btn-outline-primary">Create New</a>
 
                 <div class="card">
                     <div class="card-body">
