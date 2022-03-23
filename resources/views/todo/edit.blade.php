@@ -21,12 +21,20 @@
                         <form action="/todos/{{ $todo->id }}" method="post">
                             @csrf
                             @method('PUT')
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="Name"></label>
                                 <input type="text" name="name" class="form-control" placeholder="Todo name"
                                     value="{{ $todo->name }}">
                             </div>
-
                             <button class="btn btn-success float-end mt-4" type="submit">Update</button>
                             <a href="/todos" class="btn btn-success mt-4" type="reset">Back</a>
                         </form>
